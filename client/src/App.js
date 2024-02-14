@@ -18,9 +18,9 @@ function App() {
             <Route path="/discuss" element={<DiscussRoute />} />
           </Routes>
         </div>
-        <div className='fixed bottom-0 w-[100%]'>
+        {/* <div className=' w-[100%]'>
           <Footer />
-        </div>
+        </div> */}
       </div>
     </Router>
   );
