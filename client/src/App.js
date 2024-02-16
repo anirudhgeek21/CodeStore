@@ -4,18 +4,20 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Wall from './components/Wall';
 import Upload from './components/Upload';
-import DiscussRoute from './components/DiscussRoute'
+import DiscussRoute from './components/DiscussRoute';
+import Profile from './components/Profile'
 
 function App() {
   return (
     <Router>
-      <div className="App bg-[#CDF5FD] cursor-default">
+      <div className="App bg-black cursor-default">
         <Navigation />
-        <div className="md:w-[90%] mx-auto">
+        <div className="md:w-[100%] mx-auto">
           <Routes>
             <Route path="/" element={<Wall />} />
             <Route path="/upload" element={<Upload />} />
             <Route path="/discuss" element={<DiscussRoute />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
         {/* <div className=' w-[100%]'>

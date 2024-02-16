@@ -12,6 +12,41 @@ export default function Wall() {
             file: "hello",
             tags: "jeelo"
         },
+        {
+            id : 2,
+            title: "Hello",
+            description : "Worlds",
+            file: "hello",
+            tags: "jeelo"
+        },
+        {
+            id : 3,
+            title: "Hello",
+            description : "Worlds",
+            file: "hello",
+            tags: "jeelo"
+        },
+        {
+            id : 4,
+            title: "Hello",
+            description : "Worlds",
+            file: "hello",
+            tags: "jeelo"
+        },
+        {
+            id : 5,
+            title: "Hello",
+            description : "Worlds",
+            file: "hello",
+            tags: "jeelo"
+        },
+        {
+            id : 6,
+            title: "Hello",
+            description : "Worlds",
+            file: "hello",
+            tags: "jeelo"
+        },
     ]
 
 
@@ -19,17 +54,19 @@ export default function Wall() {
 
     return(
         <Fragment>
+            <div className="w-[90%] mx-auto">
+
             <div>
                 <Featured />
             </div>
             <div className="border-b border-gray-300 mt-0 md:mt-24"></div>
-            <div className="text-5xl font-extralight pt-10 pb-6 text-center">
+            <div className="text-5xl font-extralight pt-10 pb-6 text-center bg-black text-sky-500">
                 <h1>Discover the madness</h1>
             </div>
-            <div className="bg-[#CDF5FD] grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-3 text-white">
 
                 {Blogs.map((blog)=>(
-                    <div key={blog.id} className="hover:bg-[#00A9FF] bg-blue-500 px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{backdropFilter: 'blur(20px)'}}>
+                    <div key={blog.id} className="hover:bg-blue-600 bg-black border-blue-600 border-[2px] px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{backdropFilter: 'blur(20px)'}}>
               
                     <div className="title font-bold text-3xl text-white">
                         <h1>{blog.title}</h1>
@@ -47,6 +84,9 @@ export default function Wall() {
                 </div>      
                 ))}
         
+            </div>
+
+
             </div>
         </Fragment>
     )
