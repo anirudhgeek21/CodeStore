@@ -26,7 +26,7 @@ export default function Upload() {
                         <input type="text" id="title" placeholder="Tags" className="w-[100%] border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white mx-auto" />
                     </div>
                     <div className="text-center">
-                        <button type="submit" className="hover:bg-blue-700 bg-blue-500 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
+                        <button type="submit" className="hover:bg-blue-700 bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
                     </div>
                 </form>
             </div>
