@@ -29,7 +29,7 @@ export default function Wall() {
             <div className="bg-[#CDF5FD] grid grid-cols-1 md:grid-cols-3 gap-3">
 
                 {Blogs.map((blog)=>(
-                    <div key={blog.id} className="bg-[#00A9FF] px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{backdropFilter: 'blur(20px)'}}>
+                    <div key={blog.id} className="hover:bg-[#00A9FF] bg-blue-500 px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{backdropFilter: 'blur(20px)'}}>
               
                     <div className="title font-bold text-3xl text-white">
                         <h1>{blog.title}</h1>
