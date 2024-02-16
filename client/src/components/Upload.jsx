@@ -3,11 +3,11 @@ import React, { Fragment } from "react";
 export default function Upload() {
     return (
         <Fragment>
-            <div className="text-5xl font-extralight pt-20 text-center">
+            <div className="md:text-5xl text-5xl font-extralight md:pt-20 pt-14 text-center md:w-full mx-auto w-[90%]">
                 <h1>Uplode Your Code Blog</h1>
             </div>
-            <div className="flex flex-col items-center justify-center h-[70vh]">
-                <form className="bg-white shadow-md rounded-lg p-6 w-[50%]">
+            <div className="flex flex-col items-center justify-center md:h-[70vh] h-[65vh]">
+                <form className="bg-white shadow-md rounded-lg p-6 md:w-[50%] w-[90%]">
                     <div className="mb-6">
                         
                         <input type="text" id="title" placeholder="Title" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none text-center focus:border-blue-500" />
@@ -16,12 +16,12 @@ export default function Upload() {
                         
                         <textarea id="description" placeholder="Description" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-blue-500 text-center" rows="4"></textarea>
                     </div>
-                    <div className="mb-6 flex w-[70%] mx-auto">
+                    <div className="mb-6 flex md:w-[70%] w-full mx-auto">
                         <label htmlFor="title" className="block text-gray-700 text-md my-auto mx-auto font-light">Upload Code File :</label>
                         <input type="file" id="title" className="w-[55%] mx-auto border border-gray-300 rounded-md p-2 focus:outline-none text-center focus:border-blue-500 flex justify-center items-center" />
 
                     </div>
-                    <div className="mb-6 w-[65%] mx-auto">
+                    <div className="mb-6 md:w-[65%] w-full mx-auto">
                         
                         <input type="text" id="title" placeholder="Tags" className="w-[100%] border border-gray-300 rounded-md p-2 focus:outline-none text-center focus:border-blue-500 mx-auto" />
                     </div>

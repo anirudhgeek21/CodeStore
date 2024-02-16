@@ -7,8 +7,8 @@ import Upload from './Upload';
 export default function Navigation() {
     return (
         <div className="p-5 bg-[#00A9FF]">
-            <div className="flex justify-between w-[89%] mx-auto">
-                <div className="font-bold text-4xl">
+            <div className="md:flex justify-between w-[89%] mx-auto">
+                <div className="font-bold text-4xl md:ml-0 ml-[0.70rem] md:mb-0 mb-3">
                     <Link to="/" className="text-white">CodeStore</Link>
                 </div>
                 <div className="flex justify-around items-center">

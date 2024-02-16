@@ -6,7 +6,7 @@ function App() {
   return (
     <Fragment>
         <DiscussTodo />
-        {/* <DiscussionCards /> */}
+        <DiscussionCards />
     </Fragment>
   );
 }

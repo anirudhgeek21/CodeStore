@@ -3,11 +3,11 @@ import React, { Fragment } from "react";
 export default function DiscussTodo() {
     return (
         <Fragment>
-            <div className="text-3xl font-extralight pt-5 text-center">
+            <div className="text-3xl font-extralight pt-5 text-center mt-4">
                 <h1>Start a new discussion</h1>
             </div>
             <div className="flex flex-col items-center justify-center h-[33vh]">
-                <form className="bg-white shadow-md rounded-lg p-6 w-[40%]">
+                <form className="bg-white shadow-md rounded-lg p-6 md:w-[40%] w-[90%]">
                     <div className="mb-6">
                         
                         <input type="text" id="title" placeholder="Title" className="w-full border border-gray-300 rounded-md p-2 focus:outline-none text-center focus:border-blue-500" />
