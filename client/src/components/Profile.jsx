@@ -6,14 +6,14 @@ export default function Profile() {
     return(
         <Fragment>
             <div className="bg-black h-[100vh]">
-                    <div className="bg-[#CDF5FD] h-[400px] w-full">
+                    <div className="bg-[#CDF5FD] md:h-[400px] h-[130px] w-full">
                         <img src={imagebg} className="w-full h-full" alt="" />
                     </div>
         
-                    <div className="h-[300px] border-blue-600 border-[3px] bg-black w-[21%] rounded-full absolute top-[21rem] left-20">
-                        <img src={profilepic} className="rounded-full mt-6" alt="" />
+                    <div className="md:h-[300px] h-[140px] border-blue-600 border-[3px] bg-black md:w-[21%] w-[35%] rounded-full absolute md:top-[21rem] top-[30%] md:left-20">
+                        <img src={profilepic} className="rounded-full md:mt-6 mt-3" alt="" />
                     </div>
-                    <div className="text-right pr-24 text-5xl pt-6 font-extralight text-white">
+                    <div className="text-right md:pr-8 md:text-5xl text-3xl mr-5 md:pt-9 pt-4 md:font-extralight font-light text-white">
                         Anirudh Prajapati
                     </div>
             </div>

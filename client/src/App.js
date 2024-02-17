@@ -20,9 +20,9 @@ function App() {
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>
-        {/* <div className=' w-[100%]'>
+        <div className=' w-[100%] mt-9'>
           <Footer />
-        </div> */}
+        </div>
       </div>
     </Router>
   );
