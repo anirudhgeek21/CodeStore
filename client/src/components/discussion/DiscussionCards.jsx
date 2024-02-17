@@ -27,7 +27,7 @@ export default function DiscussionCards() {
     
     return(
         <Fragment>
-            <div className="heading md:w-[35%] bg-black text-sky-500 w-[90%] absolute md:top-[56.5%] md:left-[32.3%] top-[70%] md:text-4xl text-2xl font-extralight pt-5 text-center">
+            <div className="heading md:w-[35%] bg-black text-sky-500 w-[90%] absolute md:top-[56.5%] md:left-[32.3%] top-[70%] md:text-4xl text-2xl font-extralight pt-5 text-center hidden md:block">
                 Join other open Discussions
             </div>
             <div className="border-b border-gray-300 mt-16 md:mt-20 md:w-full w-[90%]"></div>

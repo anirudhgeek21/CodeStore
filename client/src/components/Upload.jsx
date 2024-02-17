@@ -36,8 +36,8 @@ export default function Upload() {
             <div className="md:text-5xl text-5xl text-sky-500 font-extralight md:pt-20 pt-14 text-center md:w-full mx-auto w-[90%]">
                 <h1>Uplode Your Code Blog</h1>
             </div>
-            <div className="flex flex-col items-center justify-center md:h-[70vh] h-[65vh] mt-8 mb-14">
-                <form className="border-blue-600 border-[2px] shadow-md rounded-lg p-6 md:w-[40%] w-[90%] md:py-16" onSubmit = {onSubmitForm}>
+            <div className="flex flex-col items-center justify-center md:h-[70vh] h-[65vh] md:mt-8 mb-14">
+                <form className="border-blue-600 border-[2px] shadow-md rounded-lg p-6 md:w-[40%] w-[90%] md:pb-16 md:pt-5" onSubmit = {onSubmitForm}>
                     <div className="mb-6 md:w-[80%] w-full mx-auto">
                         
                         <input type="text" id="title" placeholder="Title" className="w-full border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white" 

@@ -13,7 +13,7 @@ app.use(cors({
   }));
 
 app.get("/", (req, res) => {
-    return res.status(234).send("hello");
+    return res.status(234).send("CodeStore server sexyyy !!!");
 });
 
 // new discussion add
