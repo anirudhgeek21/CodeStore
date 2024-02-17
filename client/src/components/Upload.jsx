@@ -3,14 +3,15 @@ import React, { Fragment , useState} from "react";
 export default function Upload() {
 
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [description_short, setDescription_short] = useState('');
+    const [description_long, setDescription_long] = useState('');
     const [file, setFile] = useState('');
     const [tags, setTags] = useState('');
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
         try {
-        const body = { title, description, file, tags };
+        const body = { title, description_short , description_long , file, tags };
         const response = await fetch('http://localhost:5555/blogs', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -33,12 +34,12 @@ export default function Upload() {
 
     return (
         <Fragment>
-            <div className="md:text-5xl text-5xl text-sky-500 font-extralight md:pt-20 pt-14 text-center md:w-full mx-auto w-[90%]">
+            <div className="md:text-5xl text-5xl text-sky-500 font-extralight md:pt-14 pt-14 text-center md:w-full mx-auto w-[90%]">
                 <h1>Uplode Your Code Blog</h1>
             </div>
             <div className="flex flex-col items-center justify-center md:h-[70vh] h-[65vh] md:mt-8 mb-14">
                 <form className="border-blue-600 border-[2px] shadow-md rounded-lg p-6 md:w-[40%] w-[90%] md:pb-16 md:pt-5" onSubmit = {onSubmitForm}>
-                    <div className="mb-6 md:w-[80%] w-full mx-auto">
+                    <div className="mb-6 md:w-[80%] w-full mx-auto mt-10">
                         
                         <input type="text" id="title" placeholder="Title" className="w-full border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white" 
                         value={title}
@@ -46,9 +47,16 @@ export default function Upload() {
                     </div>
                     <div className="mb-6 md:w-[80%] w-full mx-auto">
                         
-                        <textarea id="description" placeholder="Description" className="w-full border rounded-md p-2 focus:outline-none bg-black border-blue-500 text-white text-center" rows="4"
-                        value={description}
-                        onChange={(e) => setDescription(e.target.value)}
+                        <textarea id="description" placeholder="Short Description" className="w-full border rounded-md p-2 focus:outline-none bg-black border-blue-500 text-white text-center" rows="1"
+                        value={description_short}
+                        onChange={(e) => setDescription_short(e.target.value)}
+                        ></textarea>
+                    </div>
+                    <div className="mb-6 md:w-[80%] w-full mx-auto">
+                        
+                        <textarea id="description" placeholder="Content" className="w-full border rounded-md p-2 focus:outline-none bg-black border-blue-500 text-white text-center" rows="4"
+                        value={description_long}
+                        onChange={(e) => setDescription_long(e.target.value)}
                         ></textarea>
                     </div>
                     <div className="mb-6 flex md:w-[80%] w-full mx-auto">

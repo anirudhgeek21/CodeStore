@@ -6,7 +6,11 @@ const BlogSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        description: {
+        description_short: {
+            type: String,
+            required: true,
+        },
+        description_long: {
             type: String,
             required: true,
         },

@@ -48,7 +48,8 @@ app.post('/blogs', async (req, res) => {
     try {
         if (
             !req.body.title ||
-            !req.body.description ||
+            !req.body.description_short ||
+            !req.body.description_long ||
             !req.body.file ||
             !req.body.tags
         ) {
@@ -59,7 +60,8 @@ app.post('/blogs', async (req, res) => {
 
         const newBlog = {
             title: req.body.title,
-            description: req.body.description,
+            description_short: req.body.description_short,
+            description_long: req.body.description_long,
             file: req.body.file,
             tags: req.body.tags,
         }
@@ -82,7 +84,7 @@ app.get('/blogs', async(req,res) => {
         
         const blogs = await Blog.find({});
         return res.status(200).json({
-            count : blogs.length ,
+            
             data : blogs
         });
     } catch (error) {

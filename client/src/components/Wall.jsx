@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Featured from './featured/FeaturedSection';
+import { Link } from 'react-router-dom';
 
 export default function Wall() {
     const [blogs, setBlogs] = useState([]);
@@ -35,12 +36,13 @@ export default function Wall() {
                 </div>
                 <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-3 text-white">
                     {blogs.map(blog => (
-                        <div key={blog.id} className="hover:bg-blue-600 bg-black border-blue-600 border-[2px] px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{ backdropFilter: 'blur(20px)' }}>
+                        <div key={blog._id} className="hover:bg-blue-600 bg-black border-blue-600 border-[2px] px-14 py-10 m-7 flex flex-col justify-center rounded-lg" style={{ backdropFilter: 'blur(20px)' }}>
+                            <Link to={`/blogs/${blog._id}`} style={{ textDecoration: 'none' }}>
                             <div className="title font-bold text-3xl text-white">
                                 <h1>{blog.title}</h1>
                             </div>
                             <div className="description font-light my-5 text-[#CDF5FD]">
-                                <p>" {blog.description} "</p>
+                                <p>" {blog.description_short} "</p>
                             </div>
                             <div className="file text-[#CDF5FD]">
                                 <p>Code Link :- {blog.file}</p>
@@ -48,6 +50,7 @@ export default function Wall() {
                             <div className="tags text-[#CDF5FD] mt-5 w-[100%] mx-auto rounded-md py-2">
                                 <p>Tags : {blog.tags}</p>
                             </div>
+                            </Link>
                             
                         </div>
                     ))}

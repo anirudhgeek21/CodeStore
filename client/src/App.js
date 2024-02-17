@@ -5,7 +5,8 @@ import Footer from './components/Footer';
 import Wall from './components/Wall';
 import Upload from './components/Upload';
 import DiscussRoute from './components/DiscussRoute';
-import Profile from './components/Profile'
+import Profile from './components/Profile';
+import BlogPage from './components/BlogPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/upload" element={<Upload />} />
             <Route path="/discuss" element={<DiscussRoute />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/blogs/:id" element={<BlogPage />} />
           </Routes>
         </div>
         <div className=' w-[100%] mt-9'>
