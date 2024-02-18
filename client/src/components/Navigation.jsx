@@ -8,10 +8,10 @@ export default function Navigation() {
     return (
         <div className="p-5 bg-blue-600 ">
             <div className="md:flex justify-between md:w-[90%] w-[100%] mx-auto">
-                <div className="font-bold text-4xl md:ml-0 ml-[1rem] md:mb-0 mb-3">
+                <div className="font-extrabold text-5xl md:ml-0 ml-[1rem] md:mb-0 mb-3">
                     <Link to="/" className="text-white ">CodeStore</Link>
                 </div>
-                <div className="flex justify-around items-center">
+                <div className="flex justify-around items-end">
                     <div className="px-3 text-lg font-light">
                         <Link to="/discuss" className="text-white hover:text-blue-300 duration-200">Discuss</Link>
                     </div>

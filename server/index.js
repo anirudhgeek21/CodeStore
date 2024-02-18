@@ -76,6 +76,56 @@ app.post('/blogs', async (req, res) => {
 });
 
 
+// comment add blog
+app.post('/blogs/:id/comments', async (req, res, next) => {
+    try {
+        // Find the blog by ID
+        const blog = await Blog.findById(req.params.id);
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found' });
+        }
+
+        // Ensure the request body contains the required fields
+        if (!req.body.content) {
+            return res.status(400).json({ message: 'Content is required for comment' });
+        }
+
+        // Create a new comment object
+        const newComment = {
+            content: req.body.content,
+            createdAt: new Date()
+        };
+
+        // Push the new comment to the blog's comments array
+        blog.comments.push(newComment);
+
+        // Save the blog document with the new comment
+        await blog.save();
+
+        return res.status(201).json({ message: 'Comment added successfully', comment: newComment });
+    } catch (error) {
+        next(error); // Pass the error to the error handling middleware
+    }
+});
+
+
+
+//get comment blog
+app.get('/blogs/:id/comments', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const blog = await Blog.findById(id);
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found' });
+        }
+        return res.status(200).json(blog.comments);
+    } catch (error) {
+        console.error('Error fetching comments:', error.message);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+
 
 
 //bols view all

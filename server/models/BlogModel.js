@@ -1,5 +1,16 @@
 import mongoose from 'mongoose';
 
+const CommentSchema = mongoose.Schema({
+    content: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 const BlogSchema = mongoose.Schema(
     {
         title: {
@@ -16,12 +27,13 @@ const BlogSchema = mongoose.Schema(
         },
         file: {
             type: String,
-            required: true,
+            required: false,
         },
         tags: {
             type: String,
-            required: true,
-        }
+            required: false,
+        },
+        comments: [CommentSchema]
     },
     {
         timestamps : true,

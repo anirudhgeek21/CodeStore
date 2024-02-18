@@ -27,20 +27,21 @@ export default function DiscussionCards() {
     
     return(
         <Fragment>
-            <div className="heading md:w-[35%] bg-black text-sky-500 w-[90%] absolute md:top-[56.5%] md:left-[32.3%] top-[70%] md:text-4xl text-2xl font-extralight pt-5 text-center hidden md:block">
+            <div className="heading mt-10 md:w-[90%] bg-black text-sky-500 w-[90%] text-center md:text-5xl text-2xl font-extrabold pt-5 mx-auto">
                 Join other open Discussions
             </div>
-            <div className="border-b border-gray-300 mt-16 md:mt-20 md:w-full w-[90%]"></div>
+           
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 bg-black mt-6 md:w-full w-[90%] mx-auto mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 bg-black mt-0 md:w-full w-[90%] mx-auto mb-24">
 
 
-                {discussion.map((card)=>(
+                {discussion.toReversed().map((card)=>(
                     <div key={card.id} className="flex-row mt-10 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
-                        <div className="text-center mb-3 text-3xl font-medium text-white">
+                        
+                        <div className="text-center mb-3 text-3xl font-extrabold text-white">
                             {card.title}
                         </div>
-                        <div className="text-center text-[#CDF5FD] font-light text-md">
+                        <div className="text-center text-[#CDF5FD] font-extralight text-lg">
                             " {card.description} "
                         </div>
                     </div>
