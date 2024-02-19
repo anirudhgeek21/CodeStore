@@ -65,14 +65,14 @@ const BlogPage = () => {
     return (
         <div>
             {blog ? (
-                <div className="text-white w-[75%] mx-auto">
-                    <h1 className="text-8xl font-extrabold mb-14 mt-20">{blog.title}</h1>
-                    <h2 className="text-4xl font-extralight mb-14 text-sky-500">~ {blog.description_short}</h2>
+                <div className="text-white md:w-[75%] w-[75%] mx-auto">
+                    <h1 className="md:text-8xl text-6xl font-extrabold md:mb-14 mb-10 md:mt-20 mt-14">{blog.title}</h1>
+                    <h2 className="md:text-4xl text-2xl font-extralight md:mb-14 mb-10 text-sky-500">~ {blog.description_short}</h2>
                     <div className="border-b border-gray-300"></div>
                     <div className="my-3 text-slate-500 hover:text-slate-300 duration-150 text-xl">Clap reactions</div>
                     
                     <div className="border-b border-gray-300 "></div>
-                    <div className="text-2xl mt-14 bg-black text-white" dangerouslySetInnerHTML={{ __html: blog.description_long }} />
+                    <div className="md:text-2xl text-xl md:mt-14 mt-12 bg-black text-white" dangerouslySetInnerHTML={{ __html: blog.description_long }} />
                     <div className="text-2xl font-thin my-4 mt-8">Link to file : <span className="text-blue-400 font-thin ml-3">{blog.file}</span></div>
                     <div className="text-2xl font-thin">Tags : <span className="text-sky-500 font-thin ml-3">{blog.tags}</span></div>
 
@@ -81,7 +81,7 @@ const BlogPage = () => {
                     <div className="text-5xl font-bold text-center mt-20">
                         Comments
                     </div>
-                    <div className="box mt-6 md:w-[50%] w-[100%] mx-auto py-5 border-[0.5px] border-blue-500 mb-8 rounded-md">
+                    <div className="box mt-6 md:w-[50%] w-[100%] mx-auto pt-7 mb-0 rounded-md">
                         <form onSubmit={handleCommentSubmit}>
                             <div className="mb-2 md:w-[90%] w-[90%] mx-auto">
                                 <textarea
@@ -101,7 +101,7 @@ const BlogPage = () => {
 
                     
 
-                    <div className="grid grid-cols-1 md:grid-cols-1 gap-5 bg-black mt-12 md:w-full w-[95%] mx-auto mb-24">
+                    <div className="grid grid-cols-1 md:grid-cols-1 gap-5 bg-black mt-12 md:w-full w-[95%] mx-auto mb-24 ">
                         {comments.toReversed().map((comment) => (
                             <div key={comment._id} className="flex mt-0 p-6 py-3 rounded-md  bg-black ">
                                 <div className="flex-row md:flex-col w-[100%] justify-around mx-auto my-auto">

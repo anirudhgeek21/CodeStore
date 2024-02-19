@@ -37,9 +37,7 @@ function App() {
               </Routes>
             </div>
             
-            {/* <div className=' w-[100%] mt-9'>
-              <Footer />
-            </div> */}
+            
           </>
         )}
       </div>

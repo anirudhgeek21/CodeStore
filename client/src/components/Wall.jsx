@@ -14,7 +14,7 @@ export default function Wall() {
                     throw new Error('Failed to fetch data');
                 }
                 const jsonData = await response.json();
-                console.log(jsonData);
+                
                 setBlogs(jsonData.data);
             } catch (error) {
                 console.error('Error fetching data:', error.message);
@@ -37,12 +37,12 @@ export default function Wall() {
                 </div>
                 <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-3 text-white">
                     {blogs.toReversed().map(blog => (
-                        <div key={blog._id} className="hover:bg-blue-600 bg-black border-blue-600 border-[0.5px] px-14 py-10 hover:rounded-xl m-7 flex flex-col justify-center rounded-lg" style={{ backdropFilter: 'blur(20px)' }}>
+                        <div key={blog._id} className="hover:bg-blue-600 bg-black border-blue-600 border-[0.011px] px-12 py-10 hover:rounded-xl m-7 flex flex-col justify-center rounded-lg" style={{ backdropFilter: 'blur(20px)' }}>
                             <Link to={`/blogs/${blog._id}`} style={{ textDecoration: 'none' }}>
-                            <div className="title font-extrabold text-4xl text-white mb-4">
+                            <div className="title font-extrabold text-3xl text-white mb-4">
                                 <h1>{blog.title}</h1>
                             </div>
-                            <div className="description font-normal my-5 text-[#CDF5FD]">
+                            <div className="description font-normal my-5 text-[#CDF5FD] text-md">
                                 <p>" {blog.description_short} "</p>
                             </div>
                             {/* <div className="file text-[#CDF5FD]">

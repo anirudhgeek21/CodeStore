@@ -13,21 +13,35 @@ const LandingPage = ({ onEnterWorld }) => {
           </div>
         </div>
 
-        <div className="md:text-7xl text-5xl text-center text-sky-100 font-bold px-5 md:leading-[5rem] mt-[5.7rem]">
-          The Ultimate Anonymous <br /><span className="text-blue-500">Bloging</span> and <span className="text-blue-500">Discussion</span> website
+        <div className="md:text-7xl text-5xl text-center text-sky-100 font-bold mt-[-5%] md:leading-[5rem] h-screen flex flex-col justify-center">
+        <div className="my-auto">
+            The Ultimate Anonymous <br />
+            <span className="text-blue-500">Blogging</span> and <span className="text-blue-500">Discussion</span> website
+            <br />
+            <div className="mt-12 animate-bounce">
+            ↓
+            </div>
+        </div>
         </div>
 
-        <div className="w-[74%] text-4xl font-extralight text-center mt-14 mx-auto text-sky-100">
-          Discover the ultimate platform for anonymous blogging and engaging discussions. Join a community where voices are heard, ideas are shared, and anonymity is respected.  
-        </div>
 
-        <div className="w-[74%] text-4xl font-extralight text-center mt-12 mx-auto text-sky-100">
-          Welcome to <span className="text-sky-500">CodeStore</span>
+        <div className="flex flex-col h-screen justify-center items-center mt-[-21.6%] pb-10">
+    <div className="my-auto">
+        <div className="w-[74%] text-5xl font-extrabold text-center mt-16 mx-auto text-sky-100">
+            Welcome to <span className="text-blue-500">CodeStore</span>
         </div>
         
-        <div className="w-[25%] py-3 rounded-lg hover:bg-blue-700 duration-100 bg-blue-600 text-3xl font-extralight text-center mt-3 mx-auto text-sky-100" onClick={onEnterWorld}>
-          Enter anonymous world
+        <div className="w-[74%] text-4xl font-thin text-blue-300 text-center mt-3 mx-auto">
+            Discover the ultimate platform for anonymous blogging and engaging discussions. Join a community where voices are heard, ideas are shared, and anonymity is respected.  
         </div>
+
+        <div className="w-[29%] px-0 py-3 rounded-lg hover:bg-blue-700 duration-100 bg-blue-600 text-3xl font-extrabold text-center mt-12 mx-auto text-sky-100" onClick={onEnterWorld}>
+            Enter anonymous world
+        </div>
+    </div>
+</div>
+
+        
       </div>
       <div className=' w-[100%] fixed bottom-0'>
               <Footer />

@@ -53,12 +53,12 @@ function FeaturedSection() {
 
   return (
     <div className="mt-[7%] bg-black">
-      <div className="text-sm text-sky-500 uppercase max-md:max-w-full ml-5 font-extrabold">
-                Featured Code Blogs
+      <div className="text-sm text-sky-500 uppercase max-md:max-w-full ml-[2.49rem] font-extrabold">
+                🌟 Featured Blogs
               </div>
-      <div key={currentPairIndex} className="flex md:gap-7 gap-0 flex-col-reverse md:flex-row pb-4">
+      <div key={currentPairIndex} className="flex md:gap-2 mt-0 gap-0 flex-col-reverse md:flex-row pb-4">
         {dummyBlogs[currentPairIndex].map((blog, index) => (
-          <div key={index} className="flex border-[0.5px] border-blue-600 py-8 px-5 rounded-lg gap-5 justify-between mt-8 w-full max-md:flex-wrap max-md:max-w-full ">
+          <div key={index} className="flex pb-8 px-5 rounded-lg gap-5 justify-between mt-8 w-full max-md:flex-wrap max-md:max-w-full ">
             <div className="flex text-start flex-col px-5 font-semibold max-md:max-w-full bg-neutral-80 text-white">
               
               <div className="mt-2 md:text-[2.5rem] text-3xl font-extrabold text-start space-around tracking-tight leading-12 max-md:max-w-full max-md:text-4xl max-md:leading-10 ">

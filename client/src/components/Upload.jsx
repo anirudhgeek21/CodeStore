@@ -28,44 +28,44 @@ export default function Upload() {
 
     return (
         <Fragment>
-            <div className="md:text-5xl text-5xl text-sky-500 font-extralight md:pt-14 pt-14 text-center md:w-full mx-auto w-[90%]">
+            <div className="md:text-6xl text-3xl text-sky-500 font-extrabold md:pt-14 pt-14 text-center md:w-full mx-auto w-[90%] mt-5">
                 <h1>Upload Your Code Blog</h1>
             </div>
-            <div className="flex items-start justify-start md:h-[100vh] h-[65vh] md:mt-14 mb-14">
-                <form className="border-blue-600 border-[2px] shadow-md rounded-lg p-6 md:w-[100%] mx-24 w-[80%] md:p-16  " onSubmit = {onSubmitForm}>
+            <div className="flex items-start justify-start md:mt-3 mb-14">
+                <form className=" shadow-md rounded-lg p-6 md:w-[100%] mx-24 w-[80%] md:p-16  " onSubmit = {onSubmitForm}>
                     <div className="flex"> 
 
 
 
                             <div className="flex-row w-[35%] mr-16">
-                                <div className="mb-6 md:w-[100%] w-full mx-auto ">
-                                    <input type="text" id="title" placeholder="Title *" className="w-full border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white" 
+                                <div className="mb-2 md:w-[100%] w-full mx-auto ">
+                                    <input type="text" id="title" placeholder="Title *" className="w-full border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white font-extrabold" 
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
                                         required
                                     />
                                 </div>
-                                <div className="mb-5 md:w-[100%] w-full mx-auto">
-                                    <textarea id="description" placeholder="Short Description *" className="w-full border rounded-md p-2 focus:outline-none bg-black border-blue-500 text-white text-center" rows="5"
+                                <div className="mb-1 md:w-[100%] w-full mx-auto">
+                                    <textarea id="description" placeholder="Short Description *" className="w-full border rounded-md p-2 focus:outline-none bg-black border-blue-500 text-sky-100 text-center font-light" rows="5"
                                         value={description_short}
                                         onChange={(e) => setDescription_short(e.target.value)}
                                         required
                                     />
                                 </div>
-                                <div className="mb-6 flex md:w-[100%] w-full mx-auto">
+                                <div className="mb-2 flex md:w-[100%] w-full mx-auto">
                                     
-                                    <input type="text" placeholder="Code File Link" className="w-[100%] mx-auto border  rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white flex justify-center items-center" 
+                                    <input type="text" placeholder="Code File Link" className="w-[100%] mx-auto border  rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 font-normal text-blue-300 flex justify-center items-center" 
                                         value={file}
                                         onChange={(e) => setFile(e.target.value)}
                                     />
                                 </div>
-                                <div className="mb-6 md:w-[100%] w-full mx-auto">
-                                    <input type="text" id="title" placeholder="Tags" className="w-[100%] border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white mx-auto" 
+                                <div className="mb-2 md:w-[100%] w-full mx-auto">
+                                    <input type="text" id="title" placeholder="Tags" className="w-[100%] border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white mx-auto font-light" 
                                         value={tags}
                                         onChange={(e) => setTags(e.target.value)}
                                     />
                                 </div>
-                                <div className="text-center mt-10">
+                                <div className="text-center mt-5">
                                     <button type="submit" className="hover:bg-blue-700 bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
                                 </div>
                             </div>

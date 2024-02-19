@@ -26,21 +26,21 @@ export default function DiscussTodo() {
 
     return (
         <Fragment>
-            <div className="text-5xl font-bold pt-5 text-center mt-7 text-sky-500">
+            <div className="text-5xl font-bold pt-5 text-center mt-16 text-sky-500">
                 <h1>Start a new discussion</h1>
             </div>
             <div className="flex flex-col items-center justify-center h-[33vh]">
-                <form className="border-blue-600 border-[1px] shadow-md rounded-lg p-6 md:w-[40%] w-[90%]"
+                <form className="shadow-md rounded-lg p-6 md:w-[40%] w-[90%]"
                 onSubmit={onSubmitForm}>
-                    <div className="mb-6">
+                    <div className="mb-4">
                         
-                        <input type="text" id="title" placeholder="Title" className="w-full border rounded-md p-2 focus:outline-none text-center border-blue-500 bg-black text-white" 
+                        <input type="text" id="title" placeholder="Title" className="w-full border rounded-md p-2 focus:outline-none text-center border-blue-500 bg-black text-white font-extrabold" 
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}/>
                     </div>
                     <div className="mb-6">
                         
-                        <textarea id="description" placeholder="Description" className="w-full border rounded-md p-2 focus:outline-none border-blue-500 bg-black text-white text-center" rows="1"
+                        <textarea id="description" placeholder="Description" className="w-full border rounded-md p-2 focus:outline-none border-blue-500 bg-black text-[#CDF5FD] font-extralight text-center" rows="1"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}>
 

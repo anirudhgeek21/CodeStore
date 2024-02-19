@@ -13,7 +13,7 @@ export default function DiscussionCards() {
                     throw new Error('Failed to fetch data');
                 }
                 const jsonData = await response.json();
-                console.log(jsonData);
+                
                 setDiscussion(jsonData.data);
             } catch (error) {
                 console.error('Error fetching data:', error.message);
@@ -36,7 +36,7 @@ export default function DiscussionCards() {
 
 
                 {discussion.toReversed().map((card)=>(
-                    <div key={card.id} className="flex-row mt-10 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
+                    <div key={card._id} className="flex-row mt-10 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
                         
                         <div className="text-center mb-3 text-3xl font-extrabold text-white">
                             {card.title}
