@@ -8,7 +8,7 @@ export default function DiscussionCards() {
     useEffect(() => {
         const getDiscussion = async () => {
             try {
-                const response = await fetch("http://localhost:5555/discussions");
+                const response = await fetch("https://code-store-backend.vercel.app/discussions");
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -27,7 +27,7 @@ export default function DiscussionCards() {
     
     return(
         <Fragment>
-            <div className="heading mt-10 md:w-[90%] bg-black text-sky-500 w-[90%] text-center md:text-5xl text-2xl font-extrabold pt-5 mx-auto">
+            <div className="heading mt-6 md:w-[90%] bg-black text-sky-500 w-[90%] text-center md:text-5xl text-2xl font-extrabold pt-5 mx-auto mb-9">
                 Join other open Discussions
             </div>
            
@@ -36,7 +36,7 @@ export default function DiscussionCards() {
 
 
                 {discussion.toReversed().map((card)=>(
-                    <div key={card._id} className="flex-row mt-10 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
+                    <div key={card._id} className="flex-row mt-3 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
                         
                         <div className="text-center mb-3 text-3xl font-extrabold text-white">
                             {card.title}
