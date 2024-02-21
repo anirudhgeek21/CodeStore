@@ -10,7 +10,7 @@ export default function Footer(prop) {
         { title: "MSIT" },
         { title: "IPU" },
         { title: "IGDTU" },
-        { title: "" },
+        { title: "DU" },
         
     ];
 

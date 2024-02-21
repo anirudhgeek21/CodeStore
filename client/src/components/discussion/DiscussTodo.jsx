@@ -26,7 +26,7 @@ export default function DiscussTodo() {
 
     return (
         <Fragment>
-            <div className="text-5xl font-bold pt-5 text-center mt-16 text-sky-500">
+            <div className="text-5xl font-bold pt-3 text-center mt-7 text-sky-500">
                 <h1>Start a new discussion</h1>
             </div>
             <div className="flex flex-col items-center justify-center h-[33vh]">

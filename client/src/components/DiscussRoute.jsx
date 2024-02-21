@@ -8,8 +8,11 @@ function App() {
   return (
     <Fragment>
         <div className='w-[90%] mx-auto'>
+        <div className='mt-20 mb-10'>
+          <Categories name="Discussion"/>
+        </div>
         <Featured name="Discussions" />
-        <Categories name="Discussion"/>
+        
         <DiscussTodo />
         
         <DiscussionCards />

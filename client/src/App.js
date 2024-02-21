@@ -9,6 +9,9 @@ import Profile from './components/Profile';
 import BlogPage from './components/BlogPage';
 import LandingPage from './components/Landing/LandingPage';
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   const [showLandingPage, setShowLandingPage] = useState(true);
@@ -40,7 +43,10 @@ function App() {
             
           </>
         )}
+        <SpeedInsights />
+        <Analytics />
       </div>
+      
     </Router>
   );
 }
