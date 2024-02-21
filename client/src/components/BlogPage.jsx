@@ -10,7 +10,7 @@ const BlogPage = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}`);
+                const response = await fetch(`http://localhost:5555/blogs/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -27,7 +27,7 @@ const BlogPage = () => {
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}/comments`);
+            const response = await fetch(`http://localhost:5555/blogs/${id}/comments`);
             if (!response.ok) {
                 throw new Error('Failed to fetch comments');
             }
@@ -41,7 +41,7 @@ const BlogPage = () => {
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}/comments`, {
+            const response = await fetch(`http://localhost:5555/blogs/${id}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -68,10 +68,39 @@ const BlogPage = () => {
                 <div className="text-white md:w-[75%] w-[75%] mx-auto">
                     <h1 className="md:text-8xl text-6xl font-extrabold md:mb-14 mb-10 md:mt-20 mt-14">{blog.title}</h1>
                     <h2 className="md:text-4xl text-2xl font-extralight md:mb-14 mb-10 text-sky-500">~ {blog.description_short}</h2>
-                    <div className="border-b border-gray-300"></div>
-                    <div className="my-3 text-slate-500 hover:text-slate-300 duration-150 text-xl">Clap reactions</div>
+                    <div className="border-b-[0.01px] border-gray-100"></div>
+                    {/* <div className="my-3 text-slate-500 hover:text-slate-300 duration-150 text-xl">Clap reactions</div> */}
                     
-                    <div className="border-b border-gray-300 "></div>
+
+                    <div className="text-5xl font-bold text-center mt-2 mb-3 flex justify-between">
+                        <div className="flex w-[13%] justify-around">
+                            <div className="flex text-2xl justify-around w-[40%]">
+                                <div className="clap pt-[0.1rem]">
+                                👏🏻
+                                </div>
+                                <div className="clapcount font-thin text-sky-200 text-lg my-auto pt-[0.26rem]">
+                                    13
+                                </div>
+                            </div>
+
+                            <div className="flex text-2xl justify-around w-[37%]">
+                                <div className="clap text-xl pt-[0.34rem]">
+                                    💬
+                                </div>
+                                <div className="clapcount font-thin text-sky-200 text-lg my-auto pt-1">
+                                    {comments.length}
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div className="flex">
+                            <div className="share text-3xl">
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="border-b-[0.01px] border-gray-100 "></div>
                     <div className="md:text-2xl text-xl md:mt-14 mt-12 bg-black text-white" dangerouslySetInnerHTML={{ __html: blog.description_long }} />
                     <div className="text-2xl font-thin my-4 mt-8">Link to file : <span className="text-blue-400 font-thin ml-3">{blog.file}</span></div>
                     <div className="text-2xl font-thin">Tags : <span className="text-sky-500 font-thin ml-3">{blog.tags}</span></div>
@@ -81,7 +110,7 @@ const BlogPage = () => {
                     <div className="text-5xl font-bold text-center mt-20">
                         Comments
                     </div>
-                    <div className="box mt-6 md:w-[50%] w-[100%] mx-auto pt-7 mb-0 rounded-md">
+                    <div className="box mt-0 md:w-[50%] w-[100%] mx-auto pt-7 mb-0 rounded-md">
                         <form onSubmit={handleCommentSubmit}>
                             <div className="mb-2 md:w-[90%] w-[90%] mx-auto">
                                 <textarea

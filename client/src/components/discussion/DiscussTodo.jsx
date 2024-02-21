@@ -10,7 +10,7 @@ export default function DiscussTodo() {
         e.preventDefault();
         try {
         const body = { title, description};
-        const response = await fetch('https://code-store-backend.vercel.app/discussions', {
+        const response = await fetch('http://localhost:5555/discussions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
@@ -34,7 +34,7 @@ export default function DiscussTodo() {
                 onSubmit={onSubmitForm}>
                     <div className="mb-4">
                         
-                        <input type="text" id="title" placeholder="Title" className="w-full border rounded-md p-2 focus:outline-none text-center border-blue-500 bg-black text-white font-extrabold" 
+                        <input type="text" id="title" placeholder="Title *" className="w-full border rounded-md p-2 focus:outline-none text-center border-blue-500 bg-black text-white font-extrabold" 
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}/>
                     </div>

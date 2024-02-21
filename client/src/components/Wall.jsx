@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Featured from './featured/FeaturedSection';
 import { Link } from 'react-router-dom';
+import Categories from './Category';
 
 
 export default function Wall() {
@@ -9,7 +10,7 @@ export default function Wall() {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const response = await fetch("https://code-store-backend.vercel.app/blogs");
+                const response = await fetch("http://localhost:5555/blogs");
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -29,10 +30,13 @@ export default function Wall() {
         <Fragment>
             <div className="w-[90%] mx-auto md:mt-0 mt-16 mb-12">
                 <div>
-                    <Featured />
+                    <Featured name="Blogs"/>
+                </div>
+                <div>
+                    <Categories />
                 </div>
                 
-                <div className="text-5xl font-bold pt-10 pb-6 text-center bg-black text-sky-500 mt-10">
+                <div className="text-5xl font-bold pt-10 pb-6 text-center bg-black text-sky-500 mt-11">
                     <h1>Discover the madness</h1>
                 </div>
                 <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-3 text-white">

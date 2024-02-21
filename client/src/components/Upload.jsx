@@ -14,7 +14,7 @@ export default function Upload() {
         e.preventDefault();
         try {
             const body = { title, description_short , description_long , file, tags };
-            const response = await fetch('https://code-store-backend.vercel.app/blogs', {
+            const response = await fetch('http://localhost:5555/blogs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),

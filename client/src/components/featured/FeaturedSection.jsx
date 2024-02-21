@@ -41,7 +41,7 @@ const dummyBlogs = [
   ]
 ];
 
-function FeaturedSection() {
+function FeaturedSection(prop) {
   const [currentPairIndex, setCurrentPairIndex] = useState(0);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ function FeaturedSection() {
   return (
     <div className="mt-[7%] bg-black">
       <div className="text-sm text-sky-500 uppercase max-md:max-w-full ml-[2.49rem] font-extrabold">
-                🌟 Featured Blogs
+                🌟 Featured {prop.name}
               </div>
       <div key={currentPairIndex} className="flex md:gap-2 mt-0 gap-0 flex-col-reverse md:flex-row pb-4">
         {dummyBlogs[currentPairIndex].map((blog, index) => (
