@@ -10,7 +10,7 @@ export default function Wall() {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const response = await fetch("http://localhost:5555/blogs");
+                const response = await fetch("https://code-store-backend.vercel.app/blogs");
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
