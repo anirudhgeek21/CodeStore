@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: ["https://pseudosocial.vercel.app"],
+    origin: 'https://pseudosocial.vercel.app',
     methods: ["POST","GET"],
     credentials: true
   }));
