@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Featured from './featured/FeaturedSection';
 import { Link } from 'react-router-dom';
 import Categories from './Category';
+import Navigation from './Navigation';
 
 
 export default function Wall() {
@@ -28,18 +29,19 @@ export default function Wall() {
 
     return (
         <Fragment>
+            <Navigation />
             <div className="w-[90%] mx-auto md:mt-0 mt-16 mb-12">
-                <div>
-                    <Featured name="Blogs"/>
+                <div className="mt-[-3.5%]">
+                    <Featured name="Featured Blogs"/>
                 </div>
-                <div>
+                <div className="mt-[-2%]">
                     <Categories />
                 </div>
                 
-                <div className="text-5xl font-bold pt-10 pb-6 text-center bg-black text-sky-500 mt-11">
+                <div className="text-5xl font-bold pt-10 pb-3 text-center bg-black text-sky-500 mt-5">
                     <h1>Discover the madness</h1>
                 </div>
-                <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-3 text-white">
+                <div className="bg-black grid grid-cols-1 md:grid-cols-3 gap-0 text-white">
                     {blogs.toReversed().map(blog => (
                         <div key={blog._id} className="hover:bg-blue-600 bg-black border-blue-600 border-[0.011px] px-12 py-10 hover:rounded-xl m-7 flex flex-col justify-center rounded-lg" style={{ backdropFilter: 'blur(20px)' }}>
                             <Link to={`/blogs/${blog._id}`} style={{ textDecoration: 'none' }}>

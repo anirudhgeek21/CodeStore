@@ -1,10 +1,12 @@
 import React,{Fragment} from "react";
 import imagebg from './img.png';
 import profilepic from './profilepic.png';
+import Navigation from "./Navigation";
 
 export default function Profile() {
     return(
         <Fragment>
+            <Navigation />
             <div className="bg-black h-[100vh]">
                     <div className="bg-[#CDF5FD] md:h-[400px] h-[130px] w-full">
                         <img src={imagebg} className="w-full h-full" alt="" />

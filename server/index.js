@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: ["https://code-store-frontend-one.vercel.app"],
+    origin: ["https://pseudosocial.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }));
@@ -51,9 +51,11 @@ app.post('/blogs', async (req, res) => {
         if (
             !req.body.title ||
             !req.body.description_short ||
-            !req.body.description_long ||
-            !req.body.file ||
-            !req.body.tags
+            !req.body.description_long 
+            // !req.body.author ||
+            // !req.body.category ||
+            // !req.body.file ||
+            // !req.body.tags
         ) {
             return res.status(400).send({
                 message: 'Send all required fields: title, description, file, tags'
@@ -64,6 +66,8 @@ app.post('/blogs', async (req, res) => {
             title: req.body.title,
             description_short: req.body.description_short,
             description_long: req.body.description_long,
+            author: req.body.author,
+            category: req.body.category,
             file: req.body.file,
             tags: req.body.tags,
         }
@@ -81,32 +85,26 @@ app.post('/blogs', async (req, res) => {
 // comment add blog
 app.post('/blogs/:id/comments', async (req, res, next) => {
     try {
-        // Find the blog by ID
+        
         const blog = await Blog.findById(req.params.id);
         if (!blog) {
             return res.status(404).json({ message: 'Blog not found' });
         }
 
-        // Ensure the request body contains the required fields
         if (!req.body.content) {
             return res.status(400).json({ message: 'Content is required for comment' });
         }
 
-        // Create a new comment object
         const newComment = {
             content: req.body.content,
             createdAt: new Date()
         };
-
-        // Push the new comment to the blog's comments array
         blog.comments.push(newComment);
-
-        // Save the blog document with the new comment
         await blog.save();
 
         return res.status(201).json({ message: 'Comment added successfully', comment: newComment });
     } catch (error) {
-        next(error); // Pass the error to the error handling middleware
+        next(error); 
     }
 });
 
@@ -133,10 +131,13 @@ app.get('/blogs/:id/comments', async (req, res) => {
 //bols view all
 app.get('/blogs', async(req,res) => {
     try {
-        
-        const blogs = await Blog.find({});
+        const { category } = req.query;
+        const filter = {};
+        if (category) {
+            filter.category = category;
+        }
+        const blogs = await Blog.find(filter);
         return res.status(200).json({
-            
             data : blogs
         });
     } catch (error) {

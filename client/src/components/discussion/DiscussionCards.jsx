@@ -1,4 +1,5 @@
 import React,{Fragment,useState,useEffect} from "react";
+import { Link } from "react-router-dom";
 
 export default function DiscussionCards() {
 
@@ -27,7 +28,7 @@ export default function DiscussionCards() {
     
     return(
         <Fragment>
-            <div className="heading mt-6 md:w-[90%] bg-black text-sky-500 w-[90%] text-center md:text-5xl text-2xl font-extrabold pt-5 mx-auto mb-9">
+            <div className="heading mt-6 md:w-[90%] bg-black text-sky-500 w-[90%] text-center md:text-5xl text-2xl font-extrabold pt-5 mx-auto mb-5">
                 Join other open Discussions
             </div>
            
@@ -36,15 +37,18 @@ export default function DiscussionCards() {
 
 
                 {discussion.toReversed().map((card)=>(
-                    <div key={card._id} className="flex-row mt-3 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
-                        
-                        <div className="text-center mb-3 text-3xl font-extrabold text-white">
-                            {card.title}
+                    
+                        <div key={card._id} className="flex-row mt-3 p-6 rounded-md hover:bg-blue-600 bg-black border-[1px] border-blue-600">
+                            <Link to="/discussion/college">
+                            <div className="text-center mb-3 text-3xl font-extrabold text-white">
+                                {card.title}
+                            </div>
+                            <div className="text-center text-[#CDF5FD] font-extralight text-lg">
+                                " {card.description} "
+                            </div>
+                            </Link>
                         </div>
-                        <div className="text-center text-[#CDF5FD] font-extralight text-lg">
-                            " {card.description} "
-                        </div>
-                    </div>
+                   
                 ))}
 
             </div>

@@ -1,5 +1,6 @@
 import React, { Fragment , useState ,useRef} from "react";
 import JoditEditor from 'jodit-react';
+import Navigation from "./Navigation";
 
 export default function Upload() {
     const editor = useRef(null);
@@ -7,13 +8,15 @@ export default function Upload() {
     const [title, setTitle] = useState('');
     const [description_short, setDescription_short] = useState('');
     const [description_long, setDescription_long] = useState('');
+    const [author, setAuthor] = useState('');
+    const [category, setCategory] = useState('');
     const [file, setFile] = useState('');
     const [tags, setTags] = useState('');
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
         try {
-            const body = { title, description_short , description_long , file, tags };
+            const body = { title, description_short , description_long , author , category , file, tags };
             const response = await fetch('https://code-store-backend.vercel.app/blogs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -28,6 +31,7 @@ export default function Upload() {
 
     return (
         <Fragment>
+            <Navigation />
             <div className="md:text-6xl text-3xl text-sky-500 font-extrabold md:pt-14 pt-14 text-center md:w-full mx-auto w-[90%] mt-5">
                 <h1>Upload Your Code Blog</h1>
             </div>
@@ -52,6 +56,41 @@ export default function Upload() {
                                         required
                                     />
                                 </div>
+                                <div className="mb-2 flex md:w-[100%] w-full mx-auto">
+                                    <select name="authors" id="authors" className="w-[100%] text-center text-md font-extralight focus:outline-none py-2 bg-black text-sky-100 border rounded-md border-blue-500"
+                                    value={author}
+                                    onChange={(e) => setAuthor(e.target.value)}
+                                    >
+                                        <option value="">Select One Author</option>
+                                        <option value="Bonnie">Bonnie</option>
+                                        <option value="Clyde">Clyde</option>
+                                        <option value="Dostoyevsky">Dostoyevsky</option>
+                                        <option value="Snowden">Snowden</option>
+                                        <option value="Asange">Asange</option>
+                                        <option value="Aristotle">Aristotle</option>
+                                    </select>
+                                </div>
+
+
+                                <div className="mb-2 flex md:w-[100%] w-full mx-auto">
+                                    <select name="category" id="category" className="w-[100%] text-center text-md font-extralight py-2 bg-black text-sky-100 border rounded-md border-blue-500"
+                                    value={category}
+                                    onChange={(e) => setCategory(e.target.value)}
+                                    >
+                                        <option value="general">Select One Category</option>
+                                        
+                                        <option value="NSUT">NSUT</option>
+                                        <option value="DTU">DTU</option>
+                                        <option value="IIITD">IIITD</option>
+                                        <option value="IITD">IITD</option>
+                                        <option value="DU">DU</option>
+                                        <option value="MSIT">MSIT</option>
+                                        <option value="IPU">IPU</option>
+                                        <option value="IGDTU">IGDTU</option>
+                                        
+                                    </select>
+                                </div>
+
                                 <div className="mb-2 flex md:w-[100%] w-full mx-auto">
                                     
                                     <input type="text" placeholder="Code File Link" className="w-[100%] mx-auto border  rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 font-normal text-blue-300 flex justify-center items-center" 

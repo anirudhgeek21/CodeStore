@@ -8,7 +8,7 @@ const LandingPage = ({ onEnterWorld }) => {
         <div className="p-5 bg-blue-600 ">
           <div className="md:flex justify-between md:w-[90%] w-[100%] mx-auto">
             <div className="font-bold text-4xl md:ml-0 ml-[1rem] md:mb-0 mb-3 text-white">
-                <span className="bg-slate-800 px-2 pb-1 rounded-sm mr-1">Code</span><span>Store</span>
+                <span className="bg-slate-800 px-2 pb-1 rounded-sm mr-1">Pseudo</span><span>Social</span>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@ const LandingPage = ({ onEnterWorld }) => {
         <div className="flex flex-col h-screen justify-center items-center mt-[-21.6%] pb-10">
     <div className="my-auto">
         <div className="w-[74%] text-5xl font-extrabold text-center mt-16 mx-auto text-sky-100">
-            Welcome to <span className="text-blue-500">CodeStore</span>
+            Welcome to <span className="text-blue-500">PseudoSocial</span>
         </div>
         
         <div className="w-[74%] text-4xl font-thin text-blue-300 text-center mt-3 mx-auto">

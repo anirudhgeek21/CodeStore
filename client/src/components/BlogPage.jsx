@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Navigation from "./Navigation";
 
 const BlogPage = () => {
     const { id } = useParams();
     const [blog, setBlog] = useState(null);
     const [commentContent, setCommentContent] = useState("");
     const [comments, setComments] = useState([]);
+    const authors = ["Dr. Draco Horse","Rost Kelly","Michella Campbell","Dr. Rosemary Fangs","Casper Calix","Damien Nyx","Freddy Morton","Ani Edgar","Corvin Bellatrix","Anirudh Esther"];
 
     useEffect(() => {
         const fetchBlog = async () => {
@@ -64,10 +66,14 @@ const BlogPage = () => {
 
     return (
         <div>
+            <Navigation />
             {blog ? (
                 <div className="text-white md:w-[75%] w-[75%] mx-auto">
-                    <h1 className="md:text-8xl text-6xl font-extrabold md:mb-14 mb-10 md:mt-20 mt-14">{blog.title}</h1>
-                    <h2 className="md:text-4xl text-2xl font-extralight md:mb-14 mb-10 text-sky-500">~ {blog.description_short}</h2>
+                    <h1 className="md:text-8xl text-6xl font-extrabold md:mb-12 mb-10 md:mt-20 mt-14">{blog.title}</h1>
+                    <h2 className="md:text-3xl text-2xl font-extralight md:mb-11 mb-10 text-sky-500">~ {blog.description_short}</h2>
+                    <div className="font-light text-xl mb-3">
+                        Authored by :- <span className="text-sky-500 font-light">{blog.author === "" ? authors[Math.floor(Math.random() * 10)] : blog.author}</span>
+                    </div>
                     <div className="border-b-[0.01px] border-gray-100"></div>
                     {/* <div className="my-3 text-slate-500 hover:text-slate-300 duration-150 text-xl">Clap reactions</div> */}
                     
@@ -101,7 +107,7 @@ const BlogPage = () => {
                     </div>
 
                     <div className="border-b-[0.01px] border-gray-100 "></div>
-                    <div className="md:text-2xl text-xl md:mt-14 mt-12 bg-black text-white" dangerouslySetInnerHTML={{ __html: blog.description_long }} />
+                    <div className="md:text-2xl text-xl md:mt-9 mt-12 bg-black text-white" dangerouslySetInnerHTML={{ __html: blog.description_long }} />
                     <div className="text-2xl font-thin my-4 mt-8">Link to file : <span className="text-blue-400 font-thin ml-3">{blog.file}</span></div>
                     <div className="text-2xl font-thin">Tags : <span className="text-sky-500 font-thin ml-3">{blog.tags}</span></div>
 

@@ -25,6 +25,15 @@ const BlogSchema = mongoose.Schema(
             type: String,
             required: true,
         },
+        author: {
+            type: String,
+            required: false,
+        },
+        category: {
+            type: String,
+            required: false,
+            default: "general",
+        },
         file: {
             type: String,
             required: false,

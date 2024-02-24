@@ -8,9 +8,13 @@ import DiscussRoute from './components/DiscussRoute';
 import Profile from './components/Profile';
 import BlogPage from './components/BlogPage';
 import LandingPage from './components/Landing/LandingPage';
+import CollegeBlog from './components/CollegePage/CollegeBlog'; 
+import CollegeDiscussion from './components/CollegePage/CollegeDiscussion';
+import DiscussionThread from './components/discussion/DiscussionThread';
 
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from '@vercel/analytics/react';
+
 
 
 function App() {
@@ -29,7 +33,7 @@ function App() {
           
         ) : (
           <>
-            <Navigation />
+            
             <div className="md:w-[100%] mx-auto">
               <Routes>
                 <Route path="/" element={<Wall />} />
@@ -37,6 +41,9 @@ function App() {
                 <Route path="/discuss" element={<DiscussRoute />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/blogs/:id" element={<BlogPage />} />
+                <Route path="/college/:category" element={<CollegeBlog />} />
+                <Route path="/collegediscussion" element={<CollegeDiscussion />} />
+                <Route path="/discussion/college" element={<DiscussionThread />} />
               </Routes>
             </div>
             
