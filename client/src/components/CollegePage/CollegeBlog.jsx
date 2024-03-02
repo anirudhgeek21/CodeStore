@@ -16,9 +16,9 @@ export default function CollegeHome() {
 
     let url;
     if (category==="") {
-        url = 'http://localhost:5555/blogs';
+        url = 'https://code-store-backend.vercel.app/blogs';
     } else {
-        url = `http://localhost:5555/blogs?category=${category}`;
+        url = `https://code-store-backend.vercel.app/blogs?category=${category}`;
     }
 
     useEffect(() => {
@@ -41,7 +41,7 @@ export default function CollegeHome() {
 
     const handleDeleteBlog = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5555/blogs/${id}`, {
+            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {
