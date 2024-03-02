@@ -11,7 +11,7 @@ export default function Wall() {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const response = await fetch("http://localhost:5555/blogs");
+                const response = await fetch("https://code-store-backend.vercel.app/blogs");
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -27,13 +27,12 @@ export default function Wall() {
 
     const handleDeleteBlog = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5555/blogs/${id}`, {
+            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}`, {
                 method: 'DELETE'
             });
             if (!response.ok) {
                 throw new Error('Failed to delete blog');
             }
-            // Remove the deleted blog from the state
             setBlogs(blogs.filter(blog => blog._id !== id));
         } catch (error) {
             console.error('Error deleting blog:', error.message);
