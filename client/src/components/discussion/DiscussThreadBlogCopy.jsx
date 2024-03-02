@@ -12,7 +12,7 @@ const DiscussionPage = () => {
     useEffect(() => {
         const fetchDiscussion = async () => {
             try {
-                const response = await fetch(`http://localhost:5555/discussions/${id}`);
+                const response = await fetch(`https://code-store-backend.vercel.app/discussions/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -29,7 +29,7 @@ const DiscussionPage = () => {
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`http://localhost:5555/discussions/${id}/comments`);
+            const response = await fetch(`https://code-store-backend.vercel.app/discussions/${id}/comments`);
             if (!response.ok) {
                 throw new Error('Failed to fetch comments');
             }
@@ -43,7 +43,7 @@ const DiscussionPage = () => {
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5555/discussions/${id}/comments`, {
+            const response = await fetch(`https://code-store-backend.vercel.app/discussions/${id}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -166,7 +166,7 @@ const DiscussionPage = () => {
                     
                 </div>
             ) : (
-                <p>Loading...</p>
+                <p className="text-white">Loading...</p>
             )}
         </div>
     );
