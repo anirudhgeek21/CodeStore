@@ -35,7 +35,7 @@ const LandingPage = ({ onEnterWorld }) => {
             Discover the ultimate platform for anonymous blogging and engaging discussions. Join a community where voices are heard, ideas are shared, and anonymity is respected.  
         </div>
 
-        <div className="w-[29%] px-0 py-3 rounded-lg hover:bg-blue-700 duration-100 bg-blue-600 text-3xl font-extrabold text-center mt-12 mx-auto text-sky-100" onClick={onEnterWorld}>
+        <div className="md:w-[29%] w-[90%] md:mb-0 mb-16 px-0 py-3 rounded-lg hover:bg-blue-700 duration-100 bg-blue-600 text-3xl font-extrabold text-center mt-12 mx-auto text-sky-100" onClick={onEnterWorld}>
             Enter anonymous world
         </div>
     </div>

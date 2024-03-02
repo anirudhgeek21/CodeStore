@@ -9,8 +9,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://pseudosocial.vercel.app',
-    methods: ["POST","GET"],
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }));
 
@@ -33,6 +33,8 @@ app.post('/discussions', async (req, res) => {
         const newDiscuss = {
             title: req.body.title,
             description: req.body.description,
+            category: req.body.category,
+            upvote: req.body.upvote,
             
         }
 
@@ -70,6 +72,7 @@ app.post('/blogs', async (req, res) => {
             category: req.body.category,
             file: req.body.file,
             tags: req.body.tags,
+            upvote: req.body.upvote,
         }
 
         const blog = await Blog.create(newBlog);
@@ -107,6 +110,51 @@ app.post('/blogs/:id/comments', async (req, res, next) => {
         next(error); 
     }
 });
+
+
+// add comment to discussion
+app.post('/discussions/:id/comments', async (req, res, next) => {
+    try {
+        
+        const discussion = await Discuss.findById(req.params.id);
+        if (!discussion) {
+            return res.status(404).json({ message: 'Discussion not found' });
+        }
+
+        if (!req.body.content) {
+            return res.status(400).json({ message: 'Content is required for comment' });
+        }
+
+        const newComment = {
+            content: req.body.content,
+            createdAt: new Date()
+        };
+        discussion.comments.push(newComment);
+        await discussion.save();
+
+        return res.status(201).json({ message: 'Comment added successfully', comment: newComment });
+    } catch (error) {
+        next(error); 
+    }
+});
+
+
+
+//get comment diswcuss
+app.get('/discussions/:id/comments', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const discussion = await Discuss.findById(id);
+        if (!discussion) {
+            return res.status(404).json({ message: 'Discussion not found' });
+        }
+        return res.status(200).json(discussion.comments);
+    } catch (error) {
+        console.error('Error fetching comments:', error.message);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
 
 
 
@@ -148,7 +196,14 @@ app.get('/blogs', async(req,res) => {
 
 //discussion view all
 app.get('/discussions', async(req,res) => {
+   
     try {
+
+        const { category } = req.query;
+        const filter = {};
+        if (category) {
+            filter.category = category;
+        }
         
         const discussion = await Discuss.find({});
         return res.status(200).json({
@@ -176,6 +231,20 @@ app.get('/blogs/:id', async(req,res) => {
     }
 })
 
+
+//specific discussion
+app.get('/discussions/:id', async(req,res) => {
+    try {
+        const { id } = req.params;
+
+        const discussion = await Discuss.findById(id);
+        return res.status(200).json(discussion);
+        
+    } catch (error) {
+        console.log(error.message);
+        req.status(500)({ message: error.message });
+    }
+})
 
 //delete blog
 app.delete('/blogs/:id', async(req,res) => {

@@ -1,5 +1,17 @@
 import mongoose from 'mongoose';
 
+// const CommentSchema = mongoose.Schema({
+//     content: {
+//         type: String,
+//         required: true
+//     },
+//     createdAt: {
+//         type: Date,
+//         default: Date.now
+//     },
+//     replies: [this]
+// });
+
 const CommentSchema = mongoose.Schema({
     content: {
         type: String,
@@ -11,7 +23,7 @@ const CommentSchema = mongoose.Schema({
     }
 });
 
-CommentSchema.add({ replies: [CommentSchema] });
+    
 
 const DiscussSchema = mongoose.Schema(
     {
@@ -23,7 +35,17 @@ const DiscussSchema = mongoose.Schema(
             type: String,
             required: true,
         },
+        category: {
+            type: String,
+            required: false,
+            default: "general",
+        },
+        upvote:{
+            type: Number,
+            required: false,
+        },
         comments: [CommentSchema]
+        
     },
     {
         timestamps : true,

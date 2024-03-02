@@ -10,7 +10,7 @@ import BlogPage from './components/BlogPage';
 import LandingPage from './components/Landing/LandingPage';
 import CollegeBlog from './components/CollegePage/CollegeBlog'; 
 import CollegeDiscussion from './components/CollegePage/CollegeDiscussion';
-import DiscussionThread from './components/discussion/DiscussionThread';
+import DiscussionThreadBlogCopy from './components/discussion/DiscussThreadBlogCopy';
 
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from '@vercel/analytics/react';
@@ -43,7 +43,7 @@ function App() {
                 <Route path="/blogs/:id" element={<BlogPage />} />
                 <Route path="/college/:category" element={<CollegeBlog />} />
                 <Route path="/collegediscussion" element={<CollegeDiscussion />} />
-                <Route path="/discussion/college" element={<DiscussionThread />} />
+                <Route path="/discussion/:id" element={<DiscussionThreadBlogCopy />} />
               </Routes>
             </div>
             

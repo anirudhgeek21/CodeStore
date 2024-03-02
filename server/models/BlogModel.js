@@ -42,6 +42,14 @@ const BlogSchema = mongoose.Schema(
             type: String,
             required: false,
         },
+        upvote:{
+            type: Number,
+            required: false,
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        },
         comments: [CommentSchema]
     },
     {

@@ -17,7 +17,7 @@ export default function Upload() {
         e.preventDefault();
         try {
             const body = { title, description_short , description_long , author , category , file, tags };
-            const response = await fetch('https://code-store-backend.vercel.app/blogs', {
+            const response = await fetch('http://localhost:5555/blogs', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -36,12 +36,12 @@ export default function Upload() {
                 <h1>Upload Your Code Blog</h1>
             </div>
             <div className="flex items-start justify-start md:mt-3 mb-14">
-                <form className=" shadow-md rounded-lg p-6 md:w-[100%] mx-24 w-[80%] md:p-16  " onSubmit = {onSubmitForm}>
-                    <div className="flex"> 
+                <form className=" shadow-md rounded-lg p-6 md:w-[100%] md:mx-24 mx-auto w-[90%] md:p-16  " onSubmit = {onSubmitForm}>
+                    <div className="flex md:flex-row flex-col"> 
 
 
 
-                            <div className="flex-row w-[35%] mr-16">
+                            <div className="flex-row md:w-[35%] w-[90%] mx-auto md:mr-16">
                                 <div className="mb-2 md:w-[100%] w-full mx-auto ">
                                     <input type="text" id="title" placeholder="Title *" className="w-full border rounded-md p-2 focus:outline-none text-center bg-black border-blue-500 text-white font-extrabold" 
                                         value={title}
@@ -104,18 +104,20 @@ export default function Upload() {
                                         onChange={(e) => setTags(e.target.value)}
                                     />
                                 </div>
-                                <div className="text-center mt-5">
+                                <div className="text-center mt-5 hidden md:block">
                                     <button type="submit" className="hover:bg-blue-700 bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
                                 </div>
                             </div>
-                            <div className="mb-6 md:w-[80%] w-full mx-auto jodit-container bg-black text-blue" style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                            <div className="mb-6 md:w-[80%] w-full mx-auto jodit-container bg-black text-blue md:mt-0 mt-8" style={{ maxHeight: '500px', overflowY: 'auto' }}>
                                 <JoditEditor
                                     ref={editor}
                                     value={description_long || ''}
                                     onChange={(content) => setDescription_long(content)}
                                     
-                                    
                                 />
+                            </div>
+                            <div className="text-center mt-5 block md:hidden">
+                                    <button type="submit" className="hover:bg-blue-700 bg-blue-600 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
                             </div>
 
 

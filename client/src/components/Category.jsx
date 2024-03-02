@@ -22,9 +22,9 @@ export default function Footer(prop) {
                     <div>
                     🌐 {prop.name} Communities
                     </div>
-                    <div className="mr-11 hover:text-white duration-150">
+                    {/* <div className="mr-11 hover:text-white duration-150">
                       <span className="text-white text-lg pb-1 pr-[0.15rem]">+</span> CREATE A COMMUNITY
-                    </div>
+                    </div> */}
                 </div>
                 <div className="grid md:grid-cols-9 grid-cols-3 md:mt-3 mt-6 max-md:max-w-full ml-[2.49rem]">
                     {Categories.map((category) => (
