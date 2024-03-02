@@ -11,7 +11,7 @@ export default function DiscussTodo() {
         e.preventDefault();
         try {
         const body = { title, description};
-        const response = await fetch('http://localhost:5555/discussions', {
+        const response = await fetch('https://code-store-backend.vercel.app/discussions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
