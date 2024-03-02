@@ -1,2 +1,2 @@
 url for frontend:-
-https://code-store-backend.vercel.app
+https://pseudosocial.vercel.app/
