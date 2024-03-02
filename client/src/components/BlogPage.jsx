@@ -12,7 +12,7 @@ const BlogPage = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await fetch(`http://localhost:5555/blogs/${id}`);
+                const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -29,7 +29,7 @@ const BlogPage = () => {
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`http://localhost:5555/blogs/${id}/comments`);
+            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}/comments`);
             if (!response.ok) {
                 throw new Error('Failed to fetch comments');
             }
@@ -43,7 +43,7 @@ const BlogPage = () => {
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5555/blogs/${id}/comments`, {
+            const response = await fetch(`https://code-store-backend.vercel.app/blogs/${id}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
