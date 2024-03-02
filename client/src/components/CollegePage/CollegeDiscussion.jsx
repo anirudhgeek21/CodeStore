@@ -1,4 +1,3 @@
-// CollegeHome.js
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navigation from '../Navigation';
@@ -18,9 +17,9 @@ export default function CollegeHome() {
 
     let url;
     if (selectedCategory === "") {
-        url = 'http://localhost:5555/discussions';
+        url = 'https://code-store-backend.vercel.app/discussions';
     } else {
-        url = `http://localhost:5555/discussions?category=${selectedCategory}`;
+        url = `https://code-store-backend.vercel.app/discussions?category=${selectedCategory}`;
     }
 
     useEffect(() => {
@@ -41,14 +40,14 @@ export default function CollegeHome() {
         getBlogs();
     }, [selectedCategory, url]);
 
-    // rest of your code...
+
 
     return (
         <Fragment>
             <Navigation x="X" college={category || 'General'} />
             <CategoryDiscussion selectedCategory={selectedCategory} onCategorySelect={handleCategorySelect} />
 
-            {/* rest of your code... */}
+            
         </Fragment>
     )
 }
